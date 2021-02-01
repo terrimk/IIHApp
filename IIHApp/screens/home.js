@@ -22,8 +22,9 @@ export default function Home () {
     return (
       <View style={styles.homeView}>
         <Text style={styles.title}>We Are Rare Gems</Text>
-        <Image source={require('../assets/gems2.jpg')} style={styles.homeImage}></Image>
-        <Text style={styles.subtitle}>Find Strength In Your Battle Against Rare Diseases.</Text>
+        <Text style={styles.subtitle}>Find Strength In Your Battle Against {"\n"}Rare Diseases</Text>
+        <Image source={require('../assets/lady-gem1.png')} style={styles.homeImage}></Image>
+       
       </View>
     )
   }
@@ -35,18 +36,27 @@ export default function Home () {
       //flexDirection: 'row',  // left to right orientation
       alignItems: 'center',  // works in cross axis direction, in this case will be centered vertically
       justifyContent: 'center', // works in axis direction, in this case will be centered horizontally
+      //flexWrap: 'wrap',
+      backgroundColor: 'snow',
     },
     homeImage: {
       width: 400,
       height: 400,
-      borderRadius: 80,
+      borderRadius: 70,
     },
     title: {
       fontSize: 30,
-      marginBottom: 40,
+      marginBottom: 20,
+      fontFamily: 'sans-serif-medium',
+      //font: 'snow',
     },
     subtitle: {
       fontSize: 20,
-      marginTop: 20,
+      marginBottom: 20,
+      flexWrap: 'wrap',
+      textAlign: 'center',
+      fontFamily: 'sans-serif-light',
     }
   })
+
+ 
