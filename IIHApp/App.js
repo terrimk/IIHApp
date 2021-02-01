@@ -1,114 +1,51 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
+ * IIH App
+ * App for people suffering with IIH (Idiopathic Intracanial Hypertension) and other rare diseases
+ * Created for Mony Borcsa at We Are Rare Gems, https://www.weareraregems.com/
+ * For those who are suffering, you are not forgotten
+ * 
+ * By: Terri Kellerman, February 2021
  */
 
 import React from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
+  Image,
+  StyleSheet
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
 const App: () => React$Node = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
+    <View style={styles.homeView}>
+      <Text style={styles.title}>We Are Rare Gems</Text>
+      <Image source={require('./assets/gems2.jpg')} style={styles.homeImage}></Image>
+      <Text style={styles.subtitle}>Find Strength In Your Battle Against Rare Diseases.</Text>
+    </View>
+  )
+}
 
 export default App;
+
+const styles = StyleSheet.create ({
+  homeView:{
+    flex: 1,
+    //flexDirection: 'row',  // left to right orientation
+    alignItems: 'center',  // works in cross axis direction, in this case will be centered vertically
+    justifyContent: 'center', // works in axis direction, in this case will be centered horizontally
+  },
+  homeImage: {
+    width: 400,
+    height: 400,
+    borderRadius: 80,
+  },
+  title: {
+    fontSize: 30,
+    marginBottom: 40,
+  },
+  subtitle: {
+    fontSize: 20,
+    marginTop: 20,
+  }
+})
