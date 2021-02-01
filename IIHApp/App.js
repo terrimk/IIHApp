@@ -15,11 +15,12 @@ import {
   StyleSheet
 } from 'react-native';
 import Home from './screens/home';
+import Community from './screens/community';
 
 
 const App: () => React$Node = () => {
   return (
-    <Home />
+    <Community />
   )
 }
 

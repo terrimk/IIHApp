@@ -42,13 +42,17 @@ export default function Home () {
     homeImage: {
       width: 400,
       height: 400,
-      borderRadius: 70,
+      borderTopRightRadius: 0,
+      borderTopLeftRadius: 40,
+      borderBottomLeftRadius: 40,
+      borderBottomRightRadius: 40,
+      //borderRadius: 70,
     },
     title: {
       fontSize: 30,
       marginBottom: 20,
       fontFamily: 'sans-serif-medium',
-      //font: 'snow',
+      //color: 'blue',
     },
     subtitle: {
       fontSize: 20,
@@ -56,6 +60,8 @@ export default function Home () {
       flexWrap: 'wrap',
       textAlign: 'center',
       fontFamily: 'sans-serif-light',
+      fontWeight: 'bold',
+      fontStyle: 'italic',
     }
   })
 
