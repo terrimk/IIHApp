@@ -16,11 +16,12 @@ import {
 } from 'react-native';
 import Home from './screens/home';
 import Community from './screens/community';
+import Resources from './screens/resources';
 
 
 const App: () => React$Node = () => {
   return (
-    <Community />
+    <Resources />
   )
 }
 
