@@ -67,6 +67,9 @@ export default function Resources () {
     button: {
        flex: 1,
     },
+    button1: {
+      alignSelf: 'flex-start',
+   },
     title: {
       fontSize: 30,
       marginBottom: 20,
