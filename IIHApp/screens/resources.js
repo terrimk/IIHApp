@@ -18,6 +18,7 @@ import {
   Alert,
   Linking
 } from 'react-native';
+import FlatButton from '../shared/button';
 
 const raregemsURL = "https://www.weareraregems.com";
 const webmdURL = "https://www.webmd.com/brain/pseudotumor-cerebri#1";
@@ -29,23 +30,12 @@ export default function Resources () {
       <View style={styles.pageView}>
         <Text style={styles.title}>Resources</Text>
             <View style={styles.buttonView}>  
-                <Button
-                    title="We Are Rare Gems"
-                    onPress={() => Linking.openURL(raregemsURL)}
-                    style={styles.button1}
-                />    
-                <Button
-                    title="WebMD"
-                    onPress={() => Linking.openURL(webmdURL)}
-                /> 
-                <Button
-                    title="NIH"
-                    onPress={() => Linking.openURL(nihURL)}
-                /> 
-                <Button
-                    title="NORD"
-                    onPress={() => Linking.openURL(nordURL)}
-                /> 
+              <FlatButton style={styles.button1} text='We Are Rare Gems' onPress={() => Linking.openURL(raregemsURL)} />
+              <FlatButton text='WebMD' onPress={() => Linking.openURL(webmdURL)} /> 
+            </View>
+            <View style={styles.buttonView}> 
+              <FlatButton text='NIH' onPress={() => Linking.openURL(nihURL)} /> 
+              <FlatButton text='NORD' onPress={() => Linking.openURL(nordURL)} /> 
             </View>
       </View>
     )
@@ -62,14 +52,13 @@ export default function Resources () {
     },
     buttonView: {
       flex: 1,
-      //flexDirection: 'row',
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center',
     },
-    button: {
-       flex: 1,
+    button1:{
+      alignSelf: 'flex-end',
     },
-    button1: {
-      alignSelf: 'flex-start',
-   },
     title: {
       fontSize: 30,
       marginBottom: 20,
