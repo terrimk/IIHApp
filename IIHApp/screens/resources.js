@@ -47,7 +47,7 @@ export default function Resources () {
       flexDirection: 'column',  // top to bottom orientation (this is default)
       alignItems: 'center',  // works in cross axis direction, in this case will be centered vertically
       justifyContent: 'flex-start', // works in axis direction, in this case will be centered horizontally
-      //flexWrap: 'wrap',
+      flexWrap: 'wrap',
       backgroundColor: 'snow',
     },
     buttonView: {
