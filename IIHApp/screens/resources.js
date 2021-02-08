@@ -21,25 +21,36 @@ import {
 } from 'react-native';
 import FlatButton from '../shared/button';
 
-const [url, setURL] = useState ([
-  {name: 'We Are Rare Gems', url: 'https://www.weareraregems.com', key: '1' },
-  {name: 'WebMD', url: 'https://www.webmd.com/brain/pseudotumor-cerebri#1', key: '2' },
-  {name: 'NIH', url: 'https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/idiopathic-intracranial-hypertension', key: '3' },
-  {name: 'NORD', url: 'https://rarediseases.org/rare-diseases/idiopathic-intracranial-hypertension/', key: '4' }, 
-]);
 
-const raregemsURL = "https://www.weareraregems.com";
-const webmdURL = "https://www.webmd.com/brain/pseudotumor-cerebri#1";
-const nihURL = "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/idiopathic-intracranial-hypertension";
-const nordURL = "https://rarediseases.org/rare-diseases/idiopathic-intracranial-hypertension/";
+// FIRST ATTEMPT AT LINK DISPLAY START
+// const raregemsURL = "https://www.weareraregems.com";
+// const webmdURL = "https://www.webmd.com/brain/pseudotumor-cerebri#1";
+// const nihURL = "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/idiopathic-intracranial-hypertension";
+// const nordURL = "https://rarediseases.org/rare-diseases/idiopathic-intracranial-hypertension/";
 
 export default function Resources () {
-    return (
-      <Text style={styles.title}>Resources</Text>
 
-      <FlatList
-        data={raregemURL}
-      />
+  const [url, setURL] = useState ([
+    {name: 'We Are Rare Gems', url: 'https://www.weareraregems.com', key: '1' },
+    {name: 'WebMD', url: 'https://www.webmd.com/brain/pseudotumor-cerebri#1', key: '2' },
+    {name: 'NIH', url: 'https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/idiopathic-intracranial-hypertension', key: '3' },
+    {name: 'NORD', url: 'https://rarediseases.org/rare-diseases/idiopathic-intracranial-hypertension/', key: '4' }, 
+  ]);
+     
+     return (
+      <View>
+        <Text style={styles.title}>Resources</Text>
+      </View>
+
+        <FlatList
+            numColumns={2}
+            data={url}
+            renderItem={({ item }) => (
+              <Text style={styles.title}>{ item.name }</Text>
+            )}
+          ></FlatList> 
+
+
 
     )
 
