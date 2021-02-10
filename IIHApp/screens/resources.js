@@ -17,7 +17,8 @@ import {
   StyleSheet,
   Alert,
   Linking,
-  FlatList
+  FlatList,
+  Image
 } from 'react-native';
 import FlatButton from '../shared/button';
 
@@ -31,24 +32,23 @@ import FlatButton from '../shared/button';
 export default function Resources () {
 
   const [url, setURL] = useState ([
-    {name: 'We Are Rare Gems', url: 'https://www.weareraregems.com', key: '1' },
-    {name: 'WebMD', url: 'https://www.webmd.com/brain/pseudotumor-cerebri#1', key: '2' },
-    {name: 'NIH', url: 'https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/idiopathic-intracranial-hypertension', key: '3' },
-    {name: 'NORD', url: 'https://rarediseases.org/rare-diseases/idiopathic-intracranial-hypertension/', key: '4' }, 
+    {name: 'We Are Rare Gems', icon: require('../assets/webmd_logo.svg'), url: 'https://www.weareraregems.com', key: '1' },
+    {name: 'WebMD', icon: require('../assets/webmd_logo.svg'), url: 'https://www.webmd.com/brain/pseudotumor-cerebri#1', key: '2' },
+    {name: 'NIH', icon: require('../assets/webmd_logo.svg'), url: 'https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/idiopathic-intracranial-hypertension', key: '3' },
+    {name: 'NORD', icon: require('../assets/nord-logo.webp'), url: 'https://rarediseases.org/rare-diseases/idiopathic-intracranial-hypertension/', key: '4' }, 
   ]);
      
      return (
-      <View>
+       <View>
         <Text style={styles.title}>Resources</Text>
-      </View>
-
         <FlatList
             numColumns={2}
             data={url}
             renderItem={({ item }) => (
-              <Text style={styles.title}>{ item.name }</Text>
+              <Image source={ item.icon } />
             )}
-          ></FlatList> 
+          />
+        </View>
 
 
 
