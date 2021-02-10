@@ -17,11 +17,12 @@ import {
 import Home from './screens/home';
 import Community from './screens/community';
 import Resources from './screens/resources';
+import About from './screens/about';
 
 
 const App: () => React$Node = () => {
   return (
-    <Resources />
+    <About />
   )
 }
 
