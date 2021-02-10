@@ -31,21 +31,23 @@ import FlatButton from '../shared/button';
 
 export default function Resources () {
 
-  const [url, setURL] = useState ([
-    {name: 'We Are Rare Gems', icon: require('../assets/webmd_logo.svg'), url: 'https://www.weareraregems.com', key: '1' },
-    {name: 'WebMD', icon: require('../assets/webmd_logo.svg'), url: 'https://www.webmd.com/brain/pseudotumor-cerebri#1', key: '2' },
-    {name: 'NIH', icon: require('../assets/webmd_logo.svg'), url: 'https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/idiopathic-intracranial-hypertension', key: '3' },
+  const [resource, setResource] = useState ([
+    {name: 'We Are Rare Gems', icon: require('../assets/raregems-logo.png'), url: 'https://www.weareraregems.com', key: '1' },
+    {name: 'WebMD', icon: require('../assets/webmd_logo.png'), url: 'https://www.webmd.com/brain/pseudotumor-cerebri#1', key: '2' },
+    {name: 'NIH', icon: require('../assets/NIH-icon.png'), url: 'https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/idiopathic-intracranial-hypertension', key: '3' },
     {name: 'NORD', icon: require('../assets/nord-logo.webp'), url: 'https://rarediseases.org/rare-diseases/idiopathic-intracranial-hypertension/', key: '4' }, 
   ]);
      
      return (
-       <View>
+       <View style={styles.pageView}>
         <Text style={styles.title}>Resources</Text>
         <FlatList
             numColumns={2}
-            data={url}
+            data={resource}
             renderItem={({ item }) => (
-              <Image source={ item.icon } />
+              <View>
+                <Image style={styles.logo} source={ item.icon } onPress={() => Linking.openURL(item.url)}/>
+              </View>
             )}
           />
         </View>
@@ -111,5 +113,11 @@ export default function Resources () {
       fontFamily: 'sans-serif-light',
       fontWeight: 'bold',
       fontStyle: 'italic',
-    }
+    },
+    logo: {
+      width: 150,
+      height: 150,
+      resizeMode: 'contain',
+      marginRight: 20,
+    },
   })
