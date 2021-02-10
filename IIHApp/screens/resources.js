@@ -18,7 +18,8 @@ import {
   Alert,
   Linking,
   FlatList,
-  Image
+  Image,
+  TouchableOpacity
 } from 'react-native';
 import FlatButton from '../shared/button';
 
@@ -45,9 +46,9 @@ export default function Resources () {
             numColumns={2}
             data={resource}
             renderItem={({ item }) => (
-              <View>
-                <Image style={styles.logo} source={ item.icon } onPress={() => Linking.openURL(item.url)}/>
-              </View>
+              <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
+                <Image style={styles.logo} source={ item.icon } />
+              </TouchableOpacity>
             )}
           />
         </View>
