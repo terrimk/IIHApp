@@ -18,11 +18,21 @@ import Home from './screens/home';
 import Community from './screens/community';
 import Resources from './screens/resources';
 import About from './screens/about';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+const Tab = createBottomTabNavigator();
 
 const App: () => React$Node = () => {
   return (
-    <About />
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Community" component={Community} />
+        <Tab.Screen name="Resources" component={Resources} />
+        <Tab.Screen name="About" component={About} />
+      </Tab.Navigator>
+    </NavigationContainer>
   )
 }
 
