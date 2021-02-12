@@ -21,13 +21,26 @@ import Resources from './screens/resources';
 import About from './screens/about';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Header from './shared/header';
 
 const Tab = createBottomTabNavigator();
 
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+           screenOptions={{
+              headerTitle:() => <Header />, // if placed here, also shows on Review Details page
+              headerStyle: {
+                height: 50,
+                backgroundColor: 'pink',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }} 
+        >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Community" component={Community} />
         <Tab.Screen name="Resources" component={Resources} />
