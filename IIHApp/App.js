@@ -49,7 +49,7 @@ const App: () => React$Node = () => {
           },
         })}
         tabBarOptions={{
-          activeTintColor: 'tomato',
+          activeTintColor: 'cornflowerblue',
           inactiveTintColor: 'gray',
         }}
       >
