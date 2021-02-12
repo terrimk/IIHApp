@@ -22,6 +22,8 @@ import About from './screens/about';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Header from './shared/header';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -29,18 +31,28 @@ const App: () => React$Node = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
-           screenOptions={{
-              headerTitle:() => <Header />, // if placed here, also shows on Review Details page
-              headerStyle: {
-                height: 50,
-                backgroundColor: 'pink',
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
-            }} 
-        >
+              screenOptions={({ route }) => ({
+                tabBarIcon: ({ focused, color, size }) => {
+                  let iconName;
+
+                  if (route.name === 'Home') {
+                    iconName = focused ? 'home' : 'home-outline';
+                  } else if (route.name === 'Community') {
+                    iconName = focused ? 'people-circle' : 'people-circle-outline';
+                  } else if (route.name === 'Resources') {
+                    iconName = focused ? 'information-circle' : 'information-circle-outline';
+                  } else if (route.name === 'About') {
+                    iconName = focused ? 'heart-circle' : 'heart-circle-outline';
+                  }
+                 // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray',
+        }}
+      >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Community" component={Community} />
         <Tab.Screen name="Resources" component={Resources} />
