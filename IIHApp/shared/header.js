@@ -20,7 +20,7 @@ export default function Header({ navigation, title }){
     return(
             <View style={styles.header}>
                 {/*title is added dynamically depending on page, i.e. Home or About  */}
-                <Text style ={styles.headerText}>{ title }</Text>  
+                <Text style ={styles.headerText}>Test</Text>  
             </View>
     )
 }
