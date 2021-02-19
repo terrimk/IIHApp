@@ -36,7 +36,6 @@ export default function Resources () {
      
      return (
        <View style={styles.pageView}>
-        <Text style={styles.title}>Resources</Text>
         <FlatList
             numColumns={2}
             data={resource}

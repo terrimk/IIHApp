@@ -30,13 +30,13 @@ const HomeStack = createStackNavigator();
 const SettingsStack = createStackNavigator();
 
 
-function HomeStackScreen() {
-  return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={Home} />
-    </HomeStack.Navigator>
-  );
-}
+// function HomeStackScreen() {
+//   return (
+//     <HomeStack.Navigator>
+//       <HomeStack.Screen name="Home" component={Home} />
+//     </HomeStack.Navigator>
+//   );
+// }
 
 function CommunityStackScreen() {
   return (
@@ -88,9 +88,9 @@ export default function App() {
         }}
         >
         <Tab.Screen name="Home" component={Home}  />
-        <Tab.Screen name="Community" component={Community} />
-        <Tab.Screen name="Resources" component={Resources} />
-        <Tab.Screen name="About" component={About} />
+        <Tab.Screen name="Community" component={CommunityStackScreen} />
+        <Tab.Screen name="Resources" component={ResourcesStackScreen} />
+        <Tab.Screen name="About" component={AboutStackScreen} />
         </Tab.Navigator>
     </NavigationContainer>
   );

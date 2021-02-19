@@ -22,7 +22,6 @@ import {
 export default function Community () {
     return (
       <View style={styles.communityView}>
-        <Text style={styles.subtitle}>Community of Rare Gems</Text>
         <Text style={styles.title}>COMING SOON</Text>
         <Image source={require('../assets/underconstruction-copy.jpg')} style={styles.comingSoonImage}></Image>
        

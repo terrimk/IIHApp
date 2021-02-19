@@ -23,7 +23,6 @@ import {
 export default function About () {
     return (       
       <View style={styles.aboutView}>     
-        <Text style={styles.title}>About Me</Text>
         <Text style={styles.info}>
             I'm Mony B. I was was diagnosed with Idiopathic Intracranial Hypertension (IIH), 
             otherwise known as Pseudo-Tumor Cerebri. This condition effects only 1 out of 100,000. 
