@@ -19,16 +19,16 @@ import Home from './screens/home';
 import Community from './screens/community';
 import Resources from './screens/resources';
 import About from './screens/about';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 const SettingsStack = createStackNavigator();
 
-
+//COMMENTED OUT BECAUSE HOME SCREEN WILL NOT HAVE A HEADER
 // function HomeStackScreen() {
 //   return (
 //     <HomeStack.Navigator>
@@ -37,6 +37,7 @@ const SettingsStack = createStackNavigator();
 //   );
 // }
 
+// FOLLOWING 3 FUNCTIONS WILL ADD HEADER TITLE TO EACH SCREEN
 function CommunityStackScreen() {
   return (
     <HomeStack.Navigator>
@@ -59,12 +60,11 @@ function AboutStackScreen() {
   );
 }
 
-
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-            screenOptions={({ route }) => ({
+          screenOptions={({ route }) => ({
               tabBarIcon: ({ focused, color, size }) => {
                 let iconName;
 
@@ -78,19 +78,20 @@ export default function App() {
                   iconName = focused ? 'heart-circle' : 'heart-circle-outline';
                 }
               // You can return any component that you like here!
-          return <Ionicons name={iconName} size={size} color={color} />;
-        },
-        })}
-        tabBarOptions={{
-        activeTintColor: 'cornflowerblue',
-        inactiveTintColor: 'gray',
-        }}
-        >
+              return <Ionicons name={iconName} size={size} color={color} />;
+              },
+          })}
+        
+          tabBarOptions={{
+            activeTintColor: 'cornflowerblue',
+            inactiveTintColor: 'gray',
+          }}
+      >
         <Tab.Screen name="Home" component={Home}  />
         <Tab.Screen name="Community" component={CommunityStackScreen} />
         <Tab.Screen name="Resources" component={ResourcesStackScreen} />
         <Tab.Screen name="About" component={AboutStackScreen} />
-        </Tab.Navigator>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
