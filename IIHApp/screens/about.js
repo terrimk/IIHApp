@@ -16,7 +16,6 @@ import {
   Text,
   Image,
   StyleSheet,
-  Header
 } from 'react-native';
 
 
@@ -39,7 +38,7 @@ export default function About () {
       alignItems: 'center',  // works in cross axis direction, in this case will be centered vertically
       justifyContent: 'flex-start', // works in axis direction, in this case will be centered horizontally
       //flexWrap: 'wrap',
-      backgroundColor: 'snow',
+      //backgroundColor: 'snow',
       marginTop: 20,
     },
     info: {
